@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "menu:deploy": "bash db/deploy_menu.sh",
+    "menu:smoke": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f db/menu_smoke_checks.sql"
   },
   "dependencies": {
     "next": "15.3.1",
